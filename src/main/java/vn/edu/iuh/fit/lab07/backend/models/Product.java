@@ -10,14 +10,14 @@ import java.util.List;
 @Table(name = "product")
 @NamedQueries(value = {
         @NamedQuery(name = "Product.findAll", query = "select p from Product p where p.status = ?1"),
-        @NamedQuery(name = "Product.findById", query = "select p from Product p where p.product_id = ?1")
+        @NamedQuery(name = "Product.findById", query = "select p from Product p where p.productId = ?1")
         //,...1
 })
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_id")
-    private long product_id;
+    private long productId;
     @Column(name = "name", length = 150, nullable = false)
     private String name;
 
@@ -51,12 +51,12 @@ public class Product {
         this.status = status;
     }
 
-    public long getProduct_id() {
-        return product_id;
+    public long getProductId() {
+        return productId;
     }
 
-    public void setProduct_id(long id) {
-        this.product_id = id;
+    public void setProductId(long id) {
+        this.productId = id;
     }
 
     public String getName() {
@@ -126,7 +126,7 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "id=" + product_id +
+                "id=" + productId +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", unit='" + unit + '\'' +

@@ -9,9 +9,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import vn.edu.iuh.fit.lab07.backend.enums.ProductStatus;
 import vn.edu.iuh.fit.lab07.backend.models.Product;
+import vn.edu.iuh.fit.lab07.backend.models.ProductPrice;
 import vn.edu.iuh.fit.lab07.backend.repositories.CustomerRepository;
 import vn.edu.iuh.fit.lab07.backend.repositories.ProductRepository;
 import vn.edu.iuh.fit.lab07.backend.services.ProductService;
+
+import java.util.ArrayList;
 
 @SpringBootApplication
 public class Lab07Application {
@@ -23,7 +26,7 @@ public class Lab07Application {
 	@Autowired
 	private ProductService productService;
 
-	@Bean
+//	@Bean
 	CommandLineRunner createSampleCustomer(){
 		return args -> {
 			Faker faker = new Faker();
@@ -37,7 +40,6 @@ public class Lab07Application {
 						ProductStatus.ACTIVE
 				);
 				productService.add(product);
-
 			}
 		};
 	}

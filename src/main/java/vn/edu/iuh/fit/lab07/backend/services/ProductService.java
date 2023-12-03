@@ -11,11 +11,12 @@ import java.util.ArrayList;
 public interface ProductService {
 
     public ArrayList<Product> getAll();
+
+    public Page<Product> getAll(int pageNo, int pageSize, String sortBy, String sortDirection);
+
     public Product add(Product product);
 
     public Product update(Product product);
 
     public void delete(Long id);
-
-    public Page<Product> showPaging();
 }

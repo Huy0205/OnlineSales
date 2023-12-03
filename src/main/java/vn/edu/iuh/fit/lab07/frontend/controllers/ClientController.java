@@ -10,22 +10,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 import vn.edu.iuh.fit.lab07.backend.models.Product;
 import vn.edu.iuh.fit.lab07.backend.services.ProductService;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 @Controller
-@RequestMapping("products")
-public class ProductController {
+@RequestMapping("/client")
+public class ClientController {
     @Autowired
     ProductService productService;
-    @GetMapping("/client")
+
+    @GetMapping("/index")
     public String showHomePage(Model model, @RequestParam("page") Optional<Integer> page, @RequestParam("size") Optional<Integer> size){
         int currentPage = page.orElse(1);
-        int pageSize = size.orElse(10);
-        Page<Product> productPage = productService.getAll(currentPage - 1, pageSize, "id", "asc");
+        int pageSize = size.orElse(8);
+        Page<Product> productPage = productService.getAll(currentPage - 1, pageSize, "name", "asc");
         model.addAttribute("productPage", productPage);
         int totalPage = productPage.getTotalPages();
         if(totalPage > 0){

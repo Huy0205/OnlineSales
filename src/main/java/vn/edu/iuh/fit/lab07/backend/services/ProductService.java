@@ -6,6 +6,7 @@ import vn.edu.iuh.fit.lab07.backend.models.Product;
 
 import java.awt.print.Pageable;
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public interface ProductService {
@@ -19,4 +20,8 @@ public interface ProductService {
     public Product update(Product product);
 
     public void delete(Long id);
+
+    public Product findProductExist(String name, String manufacture);
+
+    public Product findProductById(long id);
 }

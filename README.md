@@ -1,6 +1,3 @@
-# Bài tập môn lập trình WWW với công nghệ java tuần 7
-### Họ và tên: Nguyễn Tấn Huy
-### MSSV: 20068791
 ## Các chức năng:
 ### Phía Client
 1. Hiển thị trang Home
